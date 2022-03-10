@@ -1,0 +1,29 @@
+//Définitions des typographies
+$font-family-primary: "Roboto", sans-serif;
+$font-family-secondary: "Shrikhand", cursive;
+//Définitions des couleurs
+$primary: #9356dc;
+$secondary: #ff79da;
+$tertiary: #99e2d0;
+$color-green: #0c8166;
+$color-black:black;
+$color-white: #fff;
+$gradient: linear-gradient (162deg, #ff79da 0%, #9356dc 100%);
+$gradient-hover: linear-gradient 162deg, #ff79da 50%, #9356dc 100%;
+$background-color-white: #fff;
+$background-color-color: #e4d9f1;
+$background-color-cards: rgb(243, 240, 240);
+$background-color-vignette:  rgb(255, 255, 255);
+$box-shadow: 0 5px 10px 0 rgba(70, 52, 52, 0.4);
+$footer-background-color: #3a3939;
+$background-color-main: rgb(243, 241, 241);
+//CSS rules to specify families font-family:Roboto,sans-serif;
+//font-family:"Shrikhand","cursive";
+	* {
+	margin: 0;
+	padding: 0;
+}
+img {
+	//max-width: 100%;
+	width: auto;
+}	

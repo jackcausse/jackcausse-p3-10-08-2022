@@ -1,0 +1,192 @@
+html {
+	font-size: 16px;
+
+	body {
+		background-color: $color-white;
+		font-family: $font-family-primary;
+		width: auto;
+		font-size: 1rem;
+		color: $color-black;
+
+		@import "header";
+
+		/*main*/
+		main {
+			background-color: $background-color-main;
+
+			/*vignette en tête*/
+			.vignette {
+				position: relative;
+				//display: flex;
+				//align-items: center;
+				.photo_restau {
+					object-fit: cover;
+					//	width: 100%;
+					//	height: 318px;
+				}
+				.h2 {
+					display: flex;
+					align-items: flex-end;
+					background-color: $background-color-main;
+					position: absolute;
+					width: 100%;
+					justify-content: space-around;
+					bottom: -8px;
+					border-radius: 2.5rem 2.5rem 0 0;
+					//height: 72px;
+					align-items: center;
+					h2 {
+						font-family: "Shrikhand";
+						color: $color-black;
+						font-size: 28px;
+						font-weight: 100;
+						padding-top: 31px;
+					}
+					.heart {
+						font-size: 1.5rem;
+						padding-bottom: 8px;
+						margin-right: 30px;
+						cursor: pointer;
+						position: relative;
+						z-index: 1;
+						&:active {
+							&::after {
+								opacity: 1;
+							}
+						}
+						&::after {
+							content: "";
+							position: absolute;
+							top: 0;
+							right: 0;
+							bottom: 0;
+							left: 0;
+							background: radial-gradient(
+								circle,
+								lighten(#9356dc, 5) 0%,
+								darken(#ff79da, 10) 100%
+							);
+							opacity: 0;
+							z-index: index -1;
+							transition: opacity 500ms;
+						}
+					}
+				}
+			}
+
+			/*plats*/
+			.plats {
+				display: grid;
+				grid-gap: 0.8rem;
+				margin: 1rem 1rem;
+
+				h3 {
+					font-size: 1rem;
+					font-weight: 400;
+					padding-bottom: 8px;
+					margin-left: 0.5rem;
+					color: $color-black;
+					padding-top: 24px;
+					.titre_underline {
+						border-bottom: 3px solid#99e2d0;
+						padding-bottom: 5px;
+					}
+				}
+				.bouton_choix {
+					display: grid;
+					flex-direction: column;
+					//align-items: stretch;
+					height: 70px;
+					border-radius: 1rem;
+					background-color: white;
+					cursor: pointer;
+					box-shadow: 1px 2px 5px 7px #f0f0f0;
+					&hover {
+						background-color: #9356dc;
+						box-shadow: 0px 0px 1px 28px rgb(204, 175, 175);
+					}
+					.plat {
+						display: flex;
+						//align-items: center;
+						text-align: justify;
+						flex-direction: column;
+						margin-top: 0.7rem;
+						font-size: 1.1rem;
+						font-weight: 500;
+						margin-left: 0.8rem;
+						text-overflow: ellipsis;
+						.duo {
+							font-size: 0.9rem;
+							font-weight: 300;
+							gap: 80px;
+						}
+						.prix {
+							font-size: 0.9rem;
+							font-weight: bold;
+
+							align-self: end;
+							margin-right: 20px;
+							//padding-left: 80px;
+						}
+					}
+
+					.check {
+						//width: 0;
+						//overflow: hidden;
+						//text-overflow: ellipsis;
+						//text-align: center;
+						//background: #99e2d0;
+						//width: 0;
+						background: #99e2d0;
+						padding-top: 25px;
+
+						height: 70px;
+						width: 70%;
+
+						-webkit-box-align: center;
+						-ms-flex-align: center;
+						align-items: center;
+						-webkit-transition: width 1s;
+						-o-transition: width 1s;
+						transition: width 1s;
+						&:hover {
+							content: "";
+							height: 70px;
+							width: 70%;
+							transform: rotate(360deg);
+							transform-origin: left;
+							transition: transform 0.4s;
+							transition-duration: 60ms;
+
+							transform: scale(0);
+
+							i {
+								color: $color-white;
+							}
+						}
+					}
+				}
+
+				.btn {
+					padding: 1rem 3.5rem 1rem 3.5rem;
+					border-radius: 2.5rem;
+					border: none;
+					margin: 2rem 0.6rem 3.5rem 6rem;
+					font-size: 14px;
+					font-weight: 700;
+					cursor: pointer;
+					text-align: center;
+					color: $color-white;
+					//background: lighten() (162deg, #ff79da 0%, #9356dc 100%);
+					box-shadow: 0 5px 10px 0 rgba(70, 52, 52, 0.4);
+					&:hover {
+						opacity: 0.8;
+						box-shadow: 0 8px 15px 0 rgba(70, 52, 52, 0.4);
+					}
+				}
+			}
+		}
+
+		@import "footer_menu";
+	}
+}

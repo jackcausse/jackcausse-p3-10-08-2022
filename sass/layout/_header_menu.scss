@@ -1,0 +1,21 @@
+& > header {
+	display: flex;
+	position: relative;
+	height: 63px;
+	background-color: $background-color-vignette;
+	i {
+		font-size: 1.1rem;
+		color: $color-black;
+		top: 1.6rem;
+		left: 1.4rem;
+		font-weight: bold;
+		position: absolute;
+	}
+
+	img {
+		height: 28px;
+		position: absolute;
+		top: 1.4rem;
+		left: 7.2rem;
+	}
+}
