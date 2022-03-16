@@ -1,42 +1,42 @@
- footer {
-	background-color: $footer-background-color;
-	padding-top: 0.5rem;
-	padding-bottom: 1rem;
+& > footer {
+  background-color: $color-footer;
+  padding: 1.2rem 0rem 1.9rem 0;
 
-	h1 {
-		font-family: $font-family-secondary;
-		font-size: 18px;
-		font-weight: 100;
-		color: $color-white;
-		margin-left: 1.5rem;
-		margin-top: 1rem;
-	}
+  h1 {
+    font-family: $font-family-secondary;
+    font-size: 18px;
+    font-weight: 100;
+    color: $color-white;
+    margin: 0 0 0.7rem 1.5rem;
+  }
 
-	ul {
-		list-style-type: none;
-		padding: 0;
-		margin-left: 2.5rem;
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin-left: 1.5rem;
 
-		li {
-			text-decoration: none;
-			font-weight: 400;
-			line-height: 1.7rem;
+    li {
+      text-decoration: none;
+      font-weight: 400;
+      line-height: 1.7rem;
 
-			.fine {
-				font-weight: 300;
-				text-decoration: none;
-			}
+      .fine {
+        font-weight: 300;
+        text-decoration: none;
+        color: $color-white;
+      }
 
-			.cherche {
-				font-weight: 400;
-				text-decoration: none;
-			}
+      .cherche {
+        font-weight: 400;
+        text-decoration: none;
+        color: $color-white;
+      }
 
-			i {
-				background-color: $color-white;
-				margin-right: 8px;
-				font-size: 12px;
-			}
-		}
-	}
+      i {
+        color: $color-white;
+        margin-right: 8px;
+        font-size: 12px;
+      }
+    }
+  }
 }

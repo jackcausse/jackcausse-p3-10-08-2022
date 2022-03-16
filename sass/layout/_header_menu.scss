@@ -1,8 +1,7 @@
-& > header {
+header {
 	display: flex;
-	position: relative;
-	height: 63px;
-	background-color: $background-color-vignette;
+	height: 60px;
+	
 	i {
 		font-size: 1.1rem;
 		color: $color-black;
