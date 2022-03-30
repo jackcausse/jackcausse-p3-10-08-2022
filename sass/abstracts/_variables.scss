@@ -9,16 +9,21 @@ $color:  #da1de0;
 $color-green: #0c8166;
 $color-black: #000000;
 $color-white: #ffffff;
+$color-icon: #817b7b;
+$background-color-map: #e2e2e2;
+$box-shadow-map: inset 0 1px 3px #928e8e;
 $gradient: linear-gradient (162deg, #ff79da 0%, #9356dc 100%);
 $gradient-hover: linear-gradient 162deg, #ff79da 50%, #9356dc 100%;
-$color-color: #e4d9f1;
+$color-hover-cards: #8855c71a;//#9356dc1a;//
 $color-cards: #f3f0f0;
-$box-shadow: 0 5px 10px 0 #46343466;
+$box-shadow-btn: 0 5px 10px 0 #46343466;
+$box-shadow-hover-btn: 0 8px 15px 0 #46343466;
 $box-shadow-bouton-choix: 1px 2px 5px 7px #f0f0f0;
 $color-footer: #3a3939;
 $color-main: #f3f1f1;
 $box-shadow-plats: 1px 2px 5px 7px #f0f0f0;
 $box-shadow-hover-plats: 0px 0px 1px 28px rgb(204, 175, 175);
+
 * {
   margin: 0;
   padding: 0;
