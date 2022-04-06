@@ -1,1 +1,33 @@
-     
+  /* Default breakpoints */
+$breakpoint-sm: 481px;
+$breakpoint-md: 769px;
+$breakpoint-lg: 1025px;
+$breakpoint-xl: 1201px;
+
+/* Mixin: Media queries */
+   @mixin computers {
+   @media (min-width: 2400px)  {
+            display: grid;
+            grid-template-columns: repeat(2, 4fr);
+          }}  
+   @mixin computersheader {       
+    @media (min-width: 2400px) {
+      margin-left: 138px;
+          }}
+    @mixin computers {       
+    @media (min-width: 2400px) {
+      margin-left: 138px;
+      justify-content: space-between;
+          }}
+           
+          @mixin computers {
+    @media (min-width: 1290px) {
+      @content;
+    }
+  }
+    @mixin tablets {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+  
