@@ -1,11 +1,11 @@
 html {
-  background-color: $color-white;
+  background-color: $white;
   font-size: 16px;
   font-family: Roboto, sans-serif;
 
   body {
     font-size: 1rem;
-    background-color: $color-white;
+    background-color: $white;
 
     @import "header_menu";
 
@@ -16,7 +16,6 @@ html {
       .vignette {
         position: relative;
 
-        // margin-bottom: 20px;
         .photo_restau {
           object-fit: cover;
           margin-bottom: 20px;
@@ -27,173 +26,244 @@ html {
         .h2 {
           display: flex;
           align-items: flex-end;
+          text-align: center;
+          justify-content: space-between;
           height: 72px;
           background-color: $color-main;
           position: relative;
           width: 100%;
-          justify-content: space-around;
           border-radius: 2.5rem 2.5rem 0 0;
           margin-top: -4rem;
-          //breackpoint
 
-          @media (min-width: 2400px) {
+          padding-left: 1.2rem;
+
+          //breackpoint
+          @media (min-width: 1200px) {
             justify-content: space-between;
           }
+
           h2 {
             font-family: $font-family-secondary;
-            color: $color-black;
+            color: $black;
             font-size: 28px;
             font-weight: 100;
-            margin-right: 30px;
+            
           }
-
-          .fa-heart {
-            font-size: 1.5rem;
-            margin-right: 30px;
-            margin-bottom: 8px;
+          .heart {
+            padding-right: 2rem; 
             cursor: pointer;
-            position: relative;
+            font-size: 1.5rem;
+            right: 42px;
+            bottom: 10px;
 
-            &:hover {
-              color: transparent;
-              font-weight: bold;
-              background-image: linear-gradient(#ff79da 20%, #9356dc 100%);
+            .far.fa-heart {
+              font-size: 1.5rem;
+              position: absolute;
+              right: 42px;
+              bottom: 10px;
+              z-index: 5;
+              overflow: hidden;
+              &:hover {
+                transition: color 0.5s ease;
+                color: transparent;
+              }
+              &:hover + .hidden {
+                bottom: 35px;
+              }
+            }
+
+            .hidden {
+              position: absolute;
+              width: 24px;
+              height: 25px;
+              right: 42px;
+              bottom: 15px;
+              background: $color-cards; 
+              transition: all 0.2s ease;
+              z-index: 2;
+            }
+            .fas.fa-heart {
+              font-family: "Font Awesome 5 Free";
+              font-size: 1.5rem;
+              position: absolute;
+              right: 42px;
+              bottom: 10px;
+              background: linear-gradient(to top, $secondary, $primary);
               background-clip: text;
-              opacity: 1;
-              transition: all 0.6s ease-in-out;
+              -webkit-background-clip: text;
+              color: transparent;
             }
           }
         }
       }
-      /*plats*/
-      .plats {
-        display: grid;
-        grid-gap: 0.8rem;
-        margin: 1rem 1rem;
-        position: relative;
-        background-color: $color-main;
-        // Breakpoint
-        @include computers;
-
-        h3 {
-          font-size: 1rem;
-          font-weight: 400;
-          padding-top: 1rem;
-          padding-bottom: 8px;
-          margin-left: 0.5rem;
-          color: $color-black;
-
-          .titre_underline {
-            border-bottom: 3px solid $tertiary;
-            padding-bottom: 5px;
-          }
+      //des_plats
+      .des_plats {
+        @media (min-width: 1200px) {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
         }
-
-        .bouton_choix {
-          display: flex;
-          justify-content: space-between;
-          overflow: hidden;
-          height: 70px;
-          border-radius: 1rem;
-          background-color: $color-white;
-          cursor: pointer;
-          text-overflow: ellipsis;
-          box-shadow: $box-shadow-plats;
-          animation: fadein 3s;
-
-          //animation-delay: 50ms;
-          &:hover {
-            box-shadow: $box-shadow-btn;
-            &:hover .check {
-              width: 70px;
-            }
-            &:hover .check > .turn {
-              transform: rotate(0deg);
-            }
-          }
-
-          @keyframes fadein {
-            from {
-              opacity: 0;
-              animation-duration: 2s;
-              transform: translateY(20px);
-            }
-            50% {
-              opacity: 0.5;
-            }
-            to {
-              opacity: 1;
-              animation-duration: 3s;
-              transform: translateY(0px);
-            }
-          }
-
-          .plat {
-            margin: 0.7rem;
-            font-size: 1.2rem;
-            font-weight: 500;
-            flex-grow: 1;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-
-            .duo {
-              font-size: 1rem;
-              font-weight: 300;
-              width: 0;
-              overflow: hidden;
-              text-overflow: ellipsis;
-            }
-          }
-
-          .prix {
+        /*plats*/
+        .plats {
+          display: grid;
+          grid-gap: 0.8rem;
+          grid-template-columns: repeat(1, 3fr);
+          margin: 1rem 1rem;
+          position: relative;
+          background-color: $color-main;
+         
+          h3 {
             font-size: 1rem;
-            font-weight: bold;
-            padding: 38px 20px 0 20px;
+            font-weight: 400;
+            padding-top: 1rem;
+            padding-bottom: 8px;
+            margin-left: 0.5rem;
+            color: $black;
+
+            .titre_underline {
+              border-bottom: 3px solid $tertiary;
+              padding-bottom: 5px;
+            }
           }
-          .check {
-            width: 0;
+
+          .bouton_choix {
+            display: flex;
+            justify-content: space-between;
             overflow: hidden;
             height: 70px;
-            text-align: center;
-            background: $tertiary;
-            align-items: center;
-            transition: width 8s;
-            border-radius: 0 1rem 1rem 0;
-            transition: width 0.8s;
+            border-radius: 1rem;
+            background-color: $white;
+            cursor: pointer;
+            text-overflow: ellipsis;
+            box-shadow: $box-shadow-plats;
+            animation: fadein ease-out 3s;
+            -webkit-animation: fadein 3s;
 
-            .turn {
-              margin-top: 1.5rem;
+            @keyframes fadein {
+              0% {
+                transform: translateY(50%);
+                opacity: 0;
+              }
+
+              100% {
+                transform: translateY(0); 
+                opacity: 1;
+              }
+            }
+
+            @-webkit-keyframes fadein {
+              0% {
+                transform: translateY(100%); //(20px);
+                opacity: 0;
+              }
+              100% {
+                transform: translateY(0);
+                opacity: 1;
+              }
+            }
+
+            /* &:nth-of-type(1) {
+        animation-duration: 0.5s;
+      }
+      &:nth-of-type(2) {
+        animation-duration: 1s;
+      }
+      &:nth-of-type(3) {
+        animation-duration: 1.5s;
+      }
+      &:nth-of-type(4) {
+        animation-duration: 2s;
+      }*/
+            /*&:nth-child(1) {
+        animation-duration: 0.5s;
+      }
+      &:nth-child(2) {
+        animation-duration: 1s;
+      }
+      &:nth-child(3) {
+        animation-duration: 1.5s;
+      }
+      &:nth-child(4) {
+        animation-duration: 2s;
+       }*/
+
+            &:hover {
+              box-shadow: $box-shadow-btn;
+              &:hover .check {
+                width: 70px;
+              }
+              &:hover .check > .turn {
+                transform: rotate(0deg);
+              }
+            }
+
+            .plat {
+              margin: 0.7rem;
+              font-size: 1.2rem;
+              font-weight: 500;
+              flex-grow: 1;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+
+              .duo {
+                font-size: 1rem;
+                font-weight: 300;
+                width: 0;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
+            }
+
+            .prix {
+              font-size: 1rem;
+              font-weight: bold;
+              padding: 38px 20px 0 20px;
+            }
+            .check {
+              width: 0;
+              overflow: hidden;
+              height: 70px;
+              text-align: center;
+              background: $tertiary;
               align-items: center;
-              font-size: 25px;
-              color: $color-white;
-              transform: rotate(360deg);
-              transition: transform 500ms;
+              border-radius: 0 1rem 1rem 0;
+              transition: width 0.8s;
+
+              .turn {
+                margin-top: 1.5rem;
+                align-items: center;
+                font-size: 25px;
+                color: $white;
+                transform: rotate(360deg);
+                transform: -webkit-rotate(360deg);
+                transition: transform 500ms;
+                transition: -webkit-transform 500ms;
+              }
             }
           }
         }
       }
-      .btn {
-        padding: 1rem 3.5rem 1rem 3.5rem;
-        border-radius: 2.5rem;
-        border: none;
-        margin: 2.1rem 6rem 5.2rem 6rem;
-        font-size: 14px;
-        font-weight: 700;
-        cursor: pointer;
+      .command {
+        align-items: center;
         text-align: center;
-        color: $color-white;
-        background: linear-gradient(162deg, $secondary 0%, $primary 100%);
-        box-shadow: $box-shadow-btn;
-        transition: all 0.4s;
-        // Breakpoint
-        //  @include computers_btn;
-        @media (min-width: 2400px) {
-          margin-left: 74rem;
-        }
-        &:hover {
-          opacity: 0.8;
-          box-shadow: $box-shadow-hover-btn;
+
+        .btn {
+          padding: 1rem 3.5rem 1rem 3.5rem;
+          border-radius: 2.5rem;
+          border: none;
+          margin: 2.1rem 5.2rem;
+          font-size: 14px;
+          font-weight: 700;
+          cursor: pointer;
+          color: $white;
+          background: linear-gradient(162deg, $secondary 0%, $primary 100%);
+          box-shadow: $box-shadow-btn;
+          transition: all 0.4s;
+
+          &:hover {
+            opacity: 0.8;
+            box-shadow: $box-shadow-hover-btn;
+          }
         }
       }
     }

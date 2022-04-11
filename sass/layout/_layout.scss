@@ -1,12 +1,13 @@
 html {
   font-size: 16px;
+  background-color: $white;
 
   body {
-    background-color: $color-white;
+    background-color: $white;
     font-family: $font-family-primary;
     width: auto;
     font-size: 1rem;
-    color: $color-black;
+    color: $black;
 
     .spin {
       border-top: 10px solid $secondary;
@@ -57,14 +58,17 @@ html {
     main {
       .menu {
         background-color: $color-cards;
+        align-items: center;
+        text-align: center;
         .map {
           height: 50px;
           display: flex;
           align-items: center;
-          align-content: center;
+          text-align: center;
           justify-content: center;
           background-color: $background-color-map;
           gap: 1.1rem;
+          padding-right: 1.8rem;
           font-size: 1.2rem;
           font-weight: bold;
           box-shadow: $box-shadow-map;
@@ -73,11 +77,12 @@ html {
             font-size: 16px;
             cursor: pointer;
           }
+          input {
+            background-color: $background-color-map;
+          }
           p {
-            text-align: center;
             font-size: 16px;
-            font-weight: 500;
-            margin-right: 2.2rem;
+            font-weight: 700;
           }
         }
 
@@ -86,29 +91,24 @@ html {
           font-weight: 900;
           margin: 2.4rem 0 0.8rem 0;
           line-height: 1.7rem;
-          text-align: center;
         }
         .decouvrez {
-          font-size: 18px;
-          font-weight: 100;
-          text-align: center;
+          font-size: 1;
         }
         .btn {
           padding: 1rem 1.5rem 1rem 1.5rem;
           border-radius: 2.5rem;
           border: none;
-          margin: 1.8rem 0.5rem 3.5rem 5rem;
+          margin: 1.8rem 3.5rem;
           font-size: 14px;
           font-weight: bold;
           cursor: pointer;
           text-align: center;
-          color: $color-white;
+          color: $white;
           background: linear-gradient(162deg, $secondary 0%, $primary 100%);
           box-shadow: $box-shadow-btn;
           transition: all 0.4s;
-          @media (min-width: 2400px) {
-            margin-left: 73rem;
-          }
+
           &:hover {
             opacity: 0.8;
             box-shadow: $box-shadow-hover-btn;
@@ -117,10 +117,19 @@ html {
       }
       .fonctionnement {
         display: grid;
-        background-color: $color-white;
+        background-color: $white;
         align-items: center;
         margin-bottom: 3rem;
         margin-right: 10px;
+
+        //breackpoint
+        @mixin computers {
+          @media (min-width: 1200px) {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+
         h3 {
           margin: 2.8rem 1.3rem 1.4rem;
           font-size: 1.5rem;
@@ -134,84 +143,83 @@ html {
             grid-gap: 1.5rem;
             margin-bottom: 1.25rem;
             align-items: center;
-
-            .icon {
-              padding: 1.5rem;
-              border-radius: 1rem;
-              background-color: $color-cards;
-              font-size: 1.5rem;
-              list-style-type: none;
-              box-shadow: $box-shadow-btn;
+          }
+          .icon {
+            padding: 1.5rem;
+            border-radius: 1rem;
+            background-color: $color-cards;
+            font-size: 1.5rem;
+            list-style-type: none;
+            box-shadow: $box-shadow-btn;
+            cursor: pointer;
+            margin: 0 0.5rem 0 2rem;
+            counter-increment: restaus;
+            position: relative;
+            transition: all 0.4s;
+            &:hover {
+              background: $color-hover-cards;
+              box-shadow: $box-shadow-hover-btn;
               cursor: pointer;
-              margin: 0 0.5rem 0 2rem;
-              counter-increment: restaus;
-              position: relative;
-              transition: all 0.4s;
-              &:hover {
-                background: $color-hover-cards;
-                box-shadow: $box-shadow-hover-btn;
-                cursor: pointer;
-                &:hover i {
-                  color: $primary;
-                }
-              }
-              .i {
-                font-size: 1rem;
-                font-weight: bold;
-                margin-left: 1rem;
-                color: $color-icon;
-                align-items: center;
-                &:hover {
-                  color: $primary;
-                }
-              }
-
-              &:before {
-                content: counter(restaus);
-                width: 1.5rem;
-                height: 1.5rem;
-                background-color: $primary;
-                border-radius: 50%;
-                font-weight: 20px;
-                font-size: 0.9rem;
-                color: $color-white;
-                position: absolute;
-                left: -0.7rem;
-                top: 1.8rem;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-              }
-              li::marker {
+              &:hover i {
                 color: $primary;
               }
-              .un {
-                font-size: 1.3rem;
-                font-weight: bold;
-                margin-left: 1rem;
-                color: $color-icon;
+            }
+            .i {
+              font-size: 1rem;
+              font-weight: bold;
+              margin-left: 1rem;
+              color: $color-icon;
+              align-items: center;
+              &:hover {
+                color: $primary;
               }
-              .deux {
-                font-size: 1.1rem;
-                font-weight: bold;
-                margin-left: 1rem;
-                color: $color-icon;
-              }
+            }
 
-              .trois {
-                font-size: 1rem;
-                font-weight: bold;
-                margin-left: 1rem;
-                color: $color-icon;
-              }
+            &:before {
+              content: counter(restaus);
+              width: 1.5rem;
+              height: 1.5rem;
+              background-color: $primary;
+              border-radius: 50%;
+              font-weight: 20px;
+              font-size: 0.9rem;
+              color: $white;
+              position: absolute;
+              left: -0.7rem;
+              top: 1.8rem;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+            li::marker {
+              color: $primary;
+            }
+            .un {
+              font-size: 1.3rem;
+              font-weight: bold;
+              margin-left: 1rem;
+              color: $color-icon;
+            }
+            .deux {
+              font-size: 1.1rem;
+              font-weight: bold;
+              margin-left: 1rem;
+              color: $color-icon;
+            }
 
-              .text {
-                margin: 1rem;
-                text-decoration: none;
-                font-size: 1rem;
-                font-weight: 500;
-                color: $color-black;
-              }
+            .trois {
+              font-size: 1rem;
+              font-weight: bold;
+              margin-left: 1rem;
+              color: $color-icon;
+            }
+
+            .text {
+              margin: 1rem;
+              text-decoration: none;
+              font-size: 1rem;
+              font-weight: 500;
+              color: $black;
             }
           }
         }
@@ -237,20 +245,32 @@ html {
           grid-gap: 1.2rem;
           margin: 0 1.2rem 0 1.2rem;
 
-          @media (min-width: 2400px) {
+          @media (min-width: 1200px) {
             display: grid;
             grid-template-columns: repeat(2, 4fr);
           }
 
+          //breakpoint
+          @mixin computers {
+            @media (min-width: 1200px) {
+              display: grid;
+              grid-template-columns: repeat(2, 4fr);
+              @content;
+            }
+          }
           .vignette {
             border-radius: 1rem;
-            background-color: $color-white;
+            background-color: $white;
             box-shadow: $box-shadow-btn;
             height: 270px;
             position: relative;
             cursor: pointer;
             transition: all 0.4s;
             text-decoration: none;
+            a {
+              text-decoration: none;
+              color: $black;
+            }
             img {
               border-radius: 1rem 1rem 0 0;
               width: 100%;
@@ -260,7 +280,7 @@ html {
             }
             .nouveau {
               padding: 0.4rem 0.7rem 0.4rem 0.7rem;
-              border-radius: 1rem;
+              border-radius: 0.2rem;
               background-color: $tertiary;
               color: $color-green;
               position: absolute;
@@ -275,8 +295,6 @@ html {
               font-weight: bold;
               margin: 0 0 0.5rem;
               margin: 1rem 0 0 1rem;
-              text-decoration: none;
-              color: $color-black;
             }
             P {
               font-size: 1.1rem;
@@ -284,34 +302,56 @@ html {
               margin: 0.5rem 0 0 1rem;
               text-align: start;
               line-height: 1rem;
-              text-decoration: none;
-              color: $color-black;
             }
-
-            .heart {
-              width: 2rem;
-              height: 2rem;
+            .far.fa-heart {
+              cursor: pointer;
+              font-size: 1.5rem;
               position: absolute;
-              right: 2rem;
-              bottom: 2rem;
-              .fa-heart {
-                font-size: 1.5rem;
-                transition: color 0.3s ease in;
-                &:hover {
-                  color: transparent;
-                  font-weight: bold;
-                  background-image: linear-gradient(#ff79da 20%, #9356dc 100%);
-                  background-clip: text;
-                  opacity: 1;
-                  transition: all 0.6s ease-in-out;
-                }
+              right: 30px;
+              bottom: 34px;
+              z-index: 5;
+              overflow: hidden;
+              &:hover {
+                transition: color 0.5s ease;
+                color: transparent;
+              }
+              &:hover + .hidden {
+                bottom: 57px;
+              }
+            }
+            .hidden {
+              position: absolute;
+              width: 24px;
+              height: 22px;
+              right: 30px;
+              bottom: 34px;
+              background: $white;
+              transition: all 0.2s ease;
+              z-index: 2;
+            }
+            .fas.fa-heart {
+              font-size: 1.5rem;
+              position: absolute;
+              right: 30px;
+              bottom: 34px;
+              background: linear-gradient(to top, $secondary, $primary);
+              -webkit-background: linear-gradient(to top, $secondary, $primary);
+              background-clip: text;
+              -webkit-background-clip: text;
+              color: transparent;
+            }
+            .menu__heart {
+              position: relative;
+              top: 2px;
+              .hidden {
+                -webkit-background: ($color-cards, 10%);
+                background: ($color-cards, 10%);
               }
             }
           }
         }
       }
     }
-
     @import "footer";
   }
 }

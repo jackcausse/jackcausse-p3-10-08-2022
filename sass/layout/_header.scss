@@ -1,14 +1,13 @@
 header {
-  position: relative;
   height: 60px;
+  text-align: center;
+ 
   img {
-    position: absolute;
-    height: 28px;
-    top: 1rem;
-    left: 6.5rem;
-    cursor: pointer;
+    height: 28px;   
+      cursor: pointer; vertical-align: bottom;
+      margin-top: 1.2rem;
   }
 }
-//breackpoint
+
   
      
