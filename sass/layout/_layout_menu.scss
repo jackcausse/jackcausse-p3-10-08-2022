@@ -134,22 +134,22 @@ html {
             text-overflow: ellipsis;
             box-shadow: $box-shadow-plats;
 
-            &:nth-child(1) {
+            &:nth-child(2) {
               animation: fadein ease-out 0.5s;
               -webkit-animation: fadein 0.5s;
             }
 
-            &:nth-child(2) {
+            &:nth-child(3) {
               animation: fadein ease-out 1s;
               -webkit-animation: fadein 1s;
             }
 
-            &:nth-child(3) {
+            &:nth-child(4) {
               animation: fadein ease-out 2s;
               -webkit-animation: fadein 2s;
             }
 
-            &:nth-child(4) {
+            &:nth-child(5) {
               animation: fadein ease-out 3s;
               -webkit-animation: fadein 3s;
             }
@@ -168,7 +168,7 @@ html {
 
             @-webkit-keyframes fadein {
               0% {
-                transform: translateY(100%); //(20px);
+                transform: translateY(100%); 
                 opacity: 0;
               }
               100% {
@@ -176,31 +176,6 @@ html {
                 opacity: 1;
               }
             }
-
-            /* &:nth-of-type(1) {
-        animation-duration: 0.5s;
-      }
-      &:nth-of-type(2) {
-        animation-duration: 1s;
-      }
-      &:nth-of-type(3) {
-        animation-duration: 1.5s;
-      }
-      &:nth-of-type(4) {
-        animation-duration: 2s;
-      }*/
-            /*&:nth-child(1) {
-        animation-duration: 0.5s;
-      }
-      &:nth-child(2) {
-        animation-duration: 1s;
-      }
-      &:nth-child(3) {
-        animation-duration: 1.5s;
-      }
-      &:nth-child(4) {
-        animation-duration: 2s;
-       }*/
 
             &:hover {
               box-shadow: $box-shadow-btn;

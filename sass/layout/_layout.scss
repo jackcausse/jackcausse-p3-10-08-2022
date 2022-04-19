@@ -141,7 +141,7 @@ html {
           }
           //breackpoint
           @media (min-width: 1200px) {
-            grid-template-columns: repeat(3, 3fr);
+            grid-template-columns: repeat(3, 1fr);
           }
 
           .icon {
